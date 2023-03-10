@@ -11,9 +11,18 @@
   <ItemGroup>
     <None Remove="Assets\Images\bykygan.jpg" />
     <None Remove="Assets\Images\chidori.jpg" />
+    <None Remove="Assets\Images\Chinoike.jpg" />
+    <None Remove="Assets\Images\Forces of a hundred.jpg" />
+    <None Remove="Assets\Images\Forces_of_a_hundred.jpg" />
     <None Remove="Assets\Images\kynai.jpg" />
     <None Remove="Assets\Images\mainHero.jpg" />
+    <None Remove="Assets\Images\rasengan.jpg" />
     <None Remove="Assets\Images\renigan.png" />
+    <None Remove="Assets\Images\Samehada.jpg" />
+    <None Remove="Assets\Images\summoning technique.jpg" />
+    <None Remove="Assets\Images\summoning_technique.jpg" />
+    <None Remove="Assets\Images\thunder god technique.jpg" />
+    <None Remove="Assets\Images\thunder_god_technique.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,13 +32,31 @@
     <Content Include="Assets\Images\chidori.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Images\Chinoike.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\Forces_of_a_hundred.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Images\kynai.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Images\mainHero.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Images\rasengan.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Images\renigan.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\Samehada.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\summoning_technique.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Images\thunder_god_technique.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -15,29 +15,8 @@ namespace KittyGame
         private Button[,] _cells;
         private Point heroPosition = new Point(5,0);
         private Hero hero;
-        private Item[] items = new Item[]
-        
-        {
-            new Item("Кунаи","Assets/Images/kynai.jpg",new Point(2, 3))
-            {
-                Hp = 0, Hungry = 0, Damage = 15
-            },
-            new Item("Чидори","Assets/Images/chidori.jpg",new Point(1,5))
-            {           
-                Hp = 5, Hungry = 0, Damage = 35
-            },
-            new Item("Рениган","Assets/Images/renigan.png",new Point(5,4))
-            {            
-                Hp = 20, Hungry = 0, Damage = 56
-            },
-            new Item("Бьякуган","Assets/Images/bykygan.jpg",new Point(4,6))
-            { 
-                        
-                Hp = 15, Hungry = 0, Damage = 35
-            },
-
-        };
         private Button[] buttons;
+
 
         public FormMap(string heroName)
         {
@@ -61,20 +40,26 @@ namespace KittyGame
 
             //отрис интерфейс героя
             labelName.Text = heroName;
+     
+
             pictureBoxAvatar.Image = Image.FromFile("Assets/Images/mainHero.jpg");
 
             //отрисовываем героя на карте
             hero = new Hero(heroName,heroPosition);
-            _cells[heroPosition.X, heroPosition.Y].BackgroundImage = Image.FromFile("Assets/Images/mainHero.jpg");
-            _cells[heroPosition.X, heroPosition.Y].BackgroundImageLayout = ImageLayout.Zoom;
+            DrawOnCell(heroPosition.X, heroPosition.Y, "Assets/Images/mainHero.jpg");
 
             //отрисовываем предметы на карте
-            foreach(var item in items)
+            foreach(var item in ItemFactory.Items)
             {
-                _cells[item.Location.X, item.Location.Y].BackgroundImage = Image.FromFile(item.Image);
-                _cells[item.Location.X, item.Location.Y].BackgroundImageLayout = ImageLayout.Zoom;
+                DrawOnCell(item.Location.X, item.Location.Y, item.Image);
             }
 
+        }
+
+        private void DrawOnCell(int x, int y, string image)
+        {
+            _cells[x, y].BackgroundImage = Image.FromFile(image);
+            _cells[x, y].BackgroundImageLayout = ImageLayout.Zoom;
         }
 
         private void MoveHero(int x, int y)
@@ -84,15 +69,15 @@ namespace KittyGame
 
             heroPosition = new Point(x,y);
 
-            _cells[heroPosition.X, heroPosition.Y].BackgroundImage = Image.FromFile("Assets/Images/mainHero.jpg");
-            _cells[heroPosition.X, heroPosition.Y].BackgroundImageLayout = ImageLayout.Zoom;
+            DrawOnCell(heroPosition.X, heroPosition.Y, "Assets/Images/mainHero.jpg");
 
             //логика подбора предметов
-            if ( items.Any(x => x.Location==heroPosition))
+            if (ItemFactory.Items.Any(x => x.Location==heroPosition))
             {
+
                 var button = buttons.First(x => !hero.Items.Any(q => q.Button.Name == x.Name));
 
-                var item = items.First(x => x.Location == heroPosition);
+                var item = ItemFactory.Items.First(x => x.Location == heroPosition);
                 item.Button = button;
                 hero.Items.Add(item);
                 hero.Hp += item.Hp;
@@ -100,8 +85,15 @@ namespace KittyGame
                 hero.Damage += item.Damage;
 
 
+
+
                 button.BackgroundImage = Image.FromFile(item.Image);
                 button.BackgroundImageLayout = ImageLayout.Zoom;
+
+                if (buttons.Length > 8)
+                {
+                    MessageBox.Show("Больше предметов брать нельзя!");
+                }
 
             }
 
@@ -232,6 +224,21 @@ namespace KittyGame
         }
 
         private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Damage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelName_Click(object sender, EventArgs e)
         {
 
         }

@@ -118,6 +118,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.labelHp = new System.Windows.Forms.Label();
+            this.labelHungry = new System.Windows.Forms.Label();
+            this.labelDamage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -910,9 +913,9 @@
             // 
             // pictureBoxAvatar
             // 
-            this.pictureBoxAvatar.Location = new System.Drawing.Point(911, 641);
+            this.pictureBoxAvatar.Location = new System.Drawing.Point(892, 641);
             this.pictureBoxAvatar.Name = "pictureBoxAvatar";
-            this.pictureBoxAvatar.Size = new System.Drawing.Size(144, 127);
+            this.pictureBoxAvatar.Size = new System.Drawing.Size(163, 156);
             this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxAvatar.TabIndex = 1;
             this.pictureBoxAvatar.TabStop = false;
@@ -920,12 +923,13 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName.Location = new System.Drawing.Point(827, 641);
+            this.labelName.Font = new System.Drawing.Font("Javanese Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelName.Location = new System.Drawing.Point(815, 642);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(78, 32);
+            this.labelName.Size = new System.Drawing.Size(71, 47);
             this.labelName.TabIndex = 2;
             this.labelName.Text = "label1";
+            this.labelName.Click += new System.EventHandler(this.labelName_Click);
             // 
             // panelItems
             // 
@@ -1093,11 +1097,46 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // labelHp
+            // 
+            this.labelHp.AutoSize = true;
+            this.labelHp.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelHp.Location = new System.Drawing.Point(830, 688);
+            this.labelHp.Name = "labelHp";
+            this.labelHp.Size = new System.Drawing.Size(56, 36);
+            this.labelHp.TabIndex = 4;
+            this.labelHp.Text = "label1";
+            // 
+            // labelHungry
+            // 
+            this.labelHungry.AutoSize = true;
+            this.labelHungry.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelHungry.Location = new System.Drawing.Point(830, 724);
+            this.labelHungry.Name = "labelHungry";
+            this.labelHungry.Size = new System.Drawing.Size(56, 36);
+            this.labelHungry.TabIndex = 5;
+            this.labelHungry.Text = "label1";
+            this.labelHungry.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // labelDamage
+            // 
+            this.labelDamage.AutoSize = true;
+            this.labelDamage.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelDamage.Location = new System.Drawing.Point(830, 760);
+            this.labelDamage.Name = "labelDamage";
+            this.labelDamage.Size = new System.Drawing.Size(56, 36);
+            this.labelDamage.TabIndex = 6;
+            this.labelDamage.Text = "label1";
+            this.labelDamage.Click += new System.EventHandler(this.Damage_Click);
+            // 
             // FormMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 836);
+            this.Controls.Add(this.labelDamage);
+            this.Controls.Add(this.labelHungry);
+            this.Controls.Add(this.labelHp);
             this.Controls.Add(this.panelItems);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.pictureBoxAvatar);
@@ -1220,5 +1259,8 @@
         private Panel panel7;
         private Button button3;
         private Button button4;
+        private Label labelHp;
+        private Label labelHungry;
+        private Label labelDamage;
     }
 }
